@@ -24,6 +24,7 @@ namespace WebApp_SAML
     {
         private static string realm = ConfigurationManager.AppSettings["ida:Wtrealm"];
         private static string adfsMetadata = ConfigurationManager.AppSettings["ida:ADFSMetadata"];
+        private static string wreply = ConfigurationManager.AppSettings["ida:Wreply"];
 
         public void ConfigureAuth(IAppBuilder app)
         {
@@ -37,7 +38,7 @@ namespace WebApp_SAML
                 {
                     Wtrealm = realm,
                     MetadataAddress = adfsMetadata,
-                    Wreply = "https://localhost:44347/"
+                    Wreply = wreply
                 });
         }
     }
